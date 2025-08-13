@@ -21,3 +21,5 @@ media/
 # MacOS & Linux
 .DS_Store
 *.swp
+
+.gitignore

@@ -18,4 +18,4 @@ class Category(models.Model):
         ordering = ['type_name']
 
     def __str__(self):
-        return f"{self.name} ({self.store})"
+        return f"{self.type_name} ({self.store})"

@@ -6,6 +6,13 @@ from django.core.validators import RegexValidator
 
 
 class Users(AbstractUser):
+
+    class Role(models.TextChoices):
+        ADMIN = 'admin','admin',                # categorya crud, store crud, products crud
+        CUSTOMER = 'customer','customer'        # product crud
+        SELLERS = 'seller','seller'             # get product, category, post like, orderA
+        
+    
     email = models.EmailField(unique=True)
     address = models.CharField(max_length=300, blank=True, null=True)
     phone = models.CharField(
@@ -15,6 +22,11 @@ class Users(AbstractUser):
             unique=True,
             validators=[RegexValidator(r'^\+998\d{9}$', 'Telefon raqami +998 bilan boshlanishi kerak')]
         )
+    role = models.CharField(
+        max_length=10,
+        choices=Role.choices,
+        default=Role.CUSTOMER
+    )
 
     @property
     def full_name(self):

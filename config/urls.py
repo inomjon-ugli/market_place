@@ -1,6 +1,6 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -26,5 +26,16 @@ urlpatterns = [
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     
+   #  app urls
 
+   path('api/v1/', include([
+        path('users/', include('users.urls')),
+        path('cart/', include('cart.urls')),
+        path('categories/', include('categories.urls')),
+        path('images/', include('image_of_products.urls')),
+        path('likes/', include('likes.urls')),
+        path('orders/', include('orders.urls')),
+        path('products/', include('products.urls')),
+        path('stores/', include('stores.urls')),
+    ])),
 ]

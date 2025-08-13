@@ -1,3 +1,4 @@
 from django.contrib import admin
+from .models import Cards_of_users
 
-# Register your models here.
+admin.site.register(Cards_of_users)
