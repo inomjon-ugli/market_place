@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from .models import Users
 
-
 class RegisterUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = Users
@@ -11,11 +10,11 @@ class RegisterUserSerializer(serializers.ModelSerializer):
             'email',
             'password',
             'role',
-            'is_active'
         ]
         extra_kwargs = {
             "password": {"write_only": True},
-            'role': {'read_only': True}
+            'role': {'read_only': True},
+            'is_active': {'default': True}
         }
 
     def create(self, validated_data):
@@ -27,17 +26,9 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
 
 class UserListSerializer(serializers.ModelSerializer):
-    full_name = serializers.SerializerMethodField()
     class Meta:
         model = Users
-        fields = (
-            'id',
-            'username', 
-            'full_name',  
-            'email',
-            'role',
-        )
-        
+        fields = '__all__'
 
 class UserDetailSerializer(serializers.ModelSerializer):
     class Meta:

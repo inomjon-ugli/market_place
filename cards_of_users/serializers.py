@@ -8,9 +8,8 @@ class CardUserSerializer(serializers.ModelSerializer):
         model = Cards_of_users
         fields = (
             'id',
-            'name',
-            'image',
-            'phone',
-            'location'
-
+            'user',
+            'card_number',
+            'expire_date',
         )
+        read_only_fields = ['id','user']

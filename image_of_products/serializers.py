@@ -12,4 +12,4 @@ class ImageProductSerializer(serializers.ModelSerializer):
             'product',
             'image'
         )
-        read_only_fields = ['id',]
+        read_only_fields = ['id','product']

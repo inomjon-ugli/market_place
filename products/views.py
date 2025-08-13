@@ -1,11 +1,11 @@
+from permissions import IsAdminOrSeller, IsSeller
 from .serializers import ProductSerializer
 from .models import Product
 from rest_framework import viewsets
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework_simplejwt.authentication import JWTAuthentication
-from rest_framework.permissions import AllowAny,IsAuthenticated,IsAdminUser
-from .permissions import IsAdminOrSeller, IsSeller
+from rest_framework.permissions import AllowAny,IsAuthenticated
 
 
 

@@ -13,4 +13,4 @@ class LikeSerializer(serializers.ModelSerializer):
             'created_at', 
             
         )
-        read_only_fields = ('id', 'created_at')
+        read_only_fields = ('id', 'created_at','user',)

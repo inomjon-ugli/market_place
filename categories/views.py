@@ -15,10 +15,8 @@ class CategoryCrudModelViewSet(viewsets.ModelViewSet):
 
     def get_permissions(self):
         if self.action == 'list':
-            permission_classes = [permissions.AllowAny] 
-        elif self.action == 'create':
-            permission_classes = [permissions.IsAdminUser] 
-        elif self.action in ['update', 'partial_update', 'destroy']:
+            permission_classes = [permissions.AllowAny]
+        elif self.action in ['update', 'partial_update', 'destroy', 'create']:
             permission_classes = [permissions.IsAdminUser]  
         else:
             permission_classes = [permissions.IsAuthenticated] 

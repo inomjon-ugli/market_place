@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import RegisterCreateAPView
+from .views import RegisterCreateAPView, UsersListAPIView
 from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
@@ -14,6 +14,8 @@ urlpatterns = [
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
    
     # register
-    path('register/',RegisterCreateAPView.as_view())
+    path('register/',RegisterCreateAPView.as_view()),
+    path('list/',UsersListAPIView.as_view())
+
 
 ]
