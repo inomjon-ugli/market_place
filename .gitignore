@@ -4,22 +4,51 @@ __pycache__/
 *.pyo
 *.pyd
 *.pyc
+*.pyd
+*$py.class
 
 # Virtual environment
 .venv/
 env/
 venv/
+ENV/
 
 # Django specific
 db.sqlite3
+db.sqlite3-journal
 /static/
 media/
+local_settings.py
 
-# VS Code
+# Environment variables and secrets
+.env
+*.env
+.env.*
+
+# Logs
+*.log
+logs/
+logging/
+
+# IDE & editor settings
 .vscode/
+.idea/
 
-# MacOS & Linux
+# System files
 .DS_Store
 *.swp
+*.swo
 
-.gitignore
+# Test & coverage files
+.coverage
+htmlcov/
+.tox/
+pytest_cache/
+.cache/
+
+# Compiled translation files
+*.mo
+*.pot
+
+# Backup files
+*~
