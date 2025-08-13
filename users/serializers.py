@@ -6,15 +6,15 @@ class RegisterUserSerializer(serializers.ModelSerializer):
         model = Users
         fields = [
             'id',
-            'username',   
+            'first_name',
+            'last_name',
             'email',
+            'address',
+            'phone',
             'password',
-            'role',
         ]
         extra_kwargs = {
             "password": {"write_only": True},
-            'role': {'read_only': True},
-            'is_active': {'default': True}
         }
 
     def create(self, validated_data):
